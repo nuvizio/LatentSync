@@ -1,0 +1,70 @@
+[project]
+name = "latentsync"
+version = "1.6.0"
+description = "LatentSync: Taming Audio-Conditioned Latent Diffusion Models for Lip Sync with SyncNet Supervision"
+readme = "README.md"
+requires-python = "==3.12.*"
+license = { text = "Apache-2.0" }
+authors = [
+    { name = "Chunyu Li" },
+    { name = "Chao Zhang" },
+    { name = "Weikai Xu" },
+    { name = "Jingyu Lin" },
+    { name = "Jinghui Xie" },
+    { name = "Weiguo Feng" },
+    { name = "Bingyue Peng" },
+    { name = "Cunjian Chen" },
+    { name = "Weiwei Xing" },
+]
+
+dependencies = [
+    "torch>=2.5.1",
+    "torchvision>=0.20.1",
+    "diffusers==0.32.2",
+    "transformers==4.48.0",
+    "decord==0.6.0",
+    "accelerate==0.26.1",
+    "einops==0.7.0",
+    "omegaconf==2.3.0",
+    "opencv-python==4.9.0.80",
+    "mediapipe>=0.10.14",
+    "python-speech-features==0.6",
+    "librosa==0.10.1",
+    "scenedetect==0.6.1",
+    "ffmpeg-python==0.2.0",
+    "imageio==2.31.1",
+    "imageio-ffmpeg==0.5.1",
+    "lpips==0.1.4",
+    "face-alignment==1.4.1",
+    "gradio==5.24.0",
+    "huggingface-hub==0.30.2",
+    "numpy==1.26.4",
+    "kornia==0.8.0",
+    "insightface==0.7.3",
+    "onnxruntime-gpu==1.21.0",
+    "deepcache==0.1.1",
+]
+
+[project.urls]
+Homepage = "https://github.com/bytedance/LatentSync"
+Repository = "https://github.com/bytedance/LatentSync"
+Documentation = "https://github.com/bytedance/LatentSync/blob/main/README.md"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["latentsync"]
+
+[[tool.uv.index]]
+name = "pytorch"
+url = "https://download.pytorch.org/whl/cu118"
+explicit = true
+
+[tool.uv]
+environments = ["sys_platform == 'linux'"]
+
+[tool.uv.sources]
+torch = { index = "pytorch" }
+torchvision = { index = "pytorch" }
