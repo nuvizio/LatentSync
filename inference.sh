@@ -6,6 +6,6 @@ uv run python -m scripts.inference \
     --inference_steps 20 \
     --guidance_scale 1.5 \
     --enable_deepcache \
-    --video_path "assets/demo3_video.mp4" \
-    --audio_path "assets/demo3_audio.wav" \
-    --video_out_path "video_out_3.mp4"
+    --video_path "assets/demo2_video.mp4" \
+    --audio_path "assets/demo2_audio.wav" \
+    --video_out_path "video_out_2.mp4"
